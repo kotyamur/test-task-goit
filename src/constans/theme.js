@@ -6,7 +6,7 @@ export const theme = {
     btnText: '#373737',
     primaryText: '#EBD8FF',
   },
-  space: [0, 2, 4, 8, 16, 20, 36, 64],
+  space: [0, 2, 4, 8, 16, 20, 26, 28, 36],
   fonts: {
     body: 'system-ui, sans-serif',
     heading: 'system-ui, sans-serif',

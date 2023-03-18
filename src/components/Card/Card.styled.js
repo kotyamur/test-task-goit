@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const Layout = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 380px;
-  height: 460px;
+  /* width: 380px; */
+  /* height: 460px; */
   background: linear-gradient(
     114.99deg,
     #471ca9 -0.99%,
@@ -15,25 +16,71 @@ export const Layout = styled.div`
   );
   box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
   border-radius: 20px;
-  padding-top: ${p => p.theme.space[5]}px;
-  padding-bottom: ${p => p.theme.space[6]}px;
-  padding-left: ${p => p.theme.space[5]}px;
-  padding-right: ${p => p.theme.space[5]}px;
+  padding-top: ${p => p.theme.space[7]}px;
+  padding-bottom: ${p => p.theme.space[8]}px;
+  padding-left: ${p => p.theme.space[8]}px;
+  padding-right: ${p => p.theme.space[8]}px;
+`;
+
+export const LogoBox = styled.div`
+  position: absolute;
+  left: ${p => p.theme.space[5]}px;
+  top: ${p => p.theme.space[5]}px;
+`;
+
+export const BgImg = styled.img`
+  margin-bottom: 88px;
+`;
+
+export const Avatar = styled.img`
+  position: absolute;
+  top: 178px;
+  z-index: 1;
+`;
+
+export const Line = styled.div`
+  position: absolute;
+  top: 214px;
+  width: 100%;
+  width: 380px;
+  height: 8px;
+  background: ${p => p.theme.colors.bg};
+  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
+    inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
+`;
+
+export const TweetsText = styled.p`
+  font-size: ${p => p.theme.fontSizes.l};
+  font-weight: ${p => p.theme.fontWeights.semi};
+  color: ${p => p.theme.colors.primaryText};
+  text-transform: uppercase;
+  margin-bottom: ${p => p.theme.space[4]}px;
+`;
+
+export const FollowersText = styled.p`
+  font-size: ${p => p.theme.fontSizes.l};
+  font-weight: ${p => p.theme.fontWeights.semi};
+  color: ${p => p.theme.colors.primaryText};
+  text-transform: uppercase;
+  margin-bottom: ${p => p.theme.space[6]}px;
 `;
 
 export const Button = styled.button`
   display: inline-flex;
+  justify-content: center;
   align-items: center;
-  padding-top: ${p => p.theme.space[3]}px;
-  padding-bottom: ${p => p.theme.space[3]}px;
-  padding-left: ${p => p.theme.space[4]}px;
-  padding-right: ${p => p.theme.space[4]}px;
+  padding: 14px 28px;
+  width: 196px;
   border: ${p => p.theme.borders.normal};
   border-radius: ${p => p.theme.radii.md};
   background-color: ${p => {
-    return p.disabled ? p.theme.colors.bg : p.theme.colors.green;
+    // return p.disabled ? p.theme.colors.bg : p.theme.colors.green;
+    return p.theme.colors.bg;
   }};
   color: ${p => p.theme.colors.btnText};
+  font-size: ${p => p.theme.fontSizes.m};
+  font-weight: ${p => p.theme.fontWeights.bold};
+  text-transform: uppercase;
   cursor: pointer;
   :hover:not(:disabled),
   :focus:not(:disabled) {
