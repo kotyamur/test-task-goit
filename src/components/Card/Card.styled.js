@@ -74,16 +74,14 @@ export const Button = styled.button`
   border: ${p => p.theme.borders.normal};
   border-radius: ${p => p.theme.radii.md};
   background-color: ${p => {
-    // return p.disabled ? p.theme.colors.bg : p.theme.colors.green;
-    return p.theme.colors.bg;
+    return p.isFollow ? p.theme.colors.green : p.theme.colors.bg;
   }};
   color: ${p => p.theme.colors.btnText};
   font-size: ${p => p.theme.fontSizes.m};
   font-weight: ${p => p.theme.fontWeights.bold};
   text-transform: uppercase;
   cursor: pointer;
-  :hover:not(:disabled),
-  :focus:not(:disabled) {
-    background-color: ${p => p.theme.colors.green};
+  :hover {
+    scale: 1.1;
   }
 `;
