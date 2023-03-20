@@ -8,7 +8,6 @@ import {
   LogoBox,
   TweetsText,
   AvatarBox,
-  Name,
 } from './Card.styled';
 import { ReactComponent as Logo } from '../../images/Logo.svg';
 import { ReactComponent as Ellipse } from '../../images/Ellipse.svg';
@@ -53,13 +52,12 @@ export const Card = ({
       <LogoBox>
         <Logo />
       </LogoBox>
-      <BgImg src={bgImg} alt="avatar" />
+      <BgImg src={bgImg} alt="background" />
       <AvatarBox>
         <Ellipse />
         <Avatar src={imgSrc} alt={user} />
       </AvatarBox>
       <Line />
-      <Name>{user}</Name>
       <TweetsText>{tweets} tweets</TweetsText>
       <FollowersText>{countedFollowersAmount} Followers</FollowersText>
       <Button type="button" onClick={handleClick} isFollow={isFollow}>
