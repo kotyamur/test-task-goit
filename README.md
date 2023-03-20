@@ -20,7 +20,7 @@
 
 ![фото застосунку](https://prnt.sc/yFxgoWUmJAet)
 
-[Create React App](https://prnt.sc/yFxgoWUmJAet).
+[фото застосунку](https://prnt.sc/yFxgoWUmJAet).
 
 ## React homework template
 
