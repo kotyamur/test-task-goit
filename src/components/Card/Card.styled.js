@@ -99,6 +99,8 @@ export const Button = styled.button`
   font-weight: ${p => p.theme.fontWeights.bold};
   text-transform: uppercase;
   cursor: pointer;
+  scale: 1;
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
   :hover {
     scale: 1.1;
   }
