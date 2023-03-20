@@ -1,49 +1,70 @@
-import { Avatar, BgImg, Button, FollowersText, Layout, Line, LogoBox, TweetsText } from "./Card.styled";
+import {
+  Avatar,
+  BgImg,
+  Button,
+  FollowersText,
+  Container,
+  Line,
+  LogoBox,
+  TweetsText,
+  AvatarBox,
+  Name,
+} from './Card.styled';
 import { ReactComponent as Logo } from '../../images/Logo.svg';
-import cardImg from '../../images/Boy.png';
+import { ReactComponent as Ellipse } from '../../images/Ellipse.svg';
 import bgImg from '../../images/pictureBg.png';
-import { useEffect, useState } from "react";
-import { getDataFromLocalStorage, setDataToLocalStorage } from "utils/getSetDataLocalStorage";
+import { useState } from "react";
 
-export const Card = () => {
-  const [followersAmount, setFollowersAmount] = useState(
-    () => getDataFromLocalStorage().followersAmount ?? 100500
-  );
-  const [isFollow, setIsFollow] = useState(
-    () => getDataFromLocalStorage().isFollow ?? false
-  );
+export const Card = ({
+  user,
+  followers,
+  tweets,
+  changeFollowersAmount,
+  id,
+  following,
+  avatar, 
+}) => {
+  const [isFollow, setIsFollow] = useState(following || false);
 
-  useEffect(() => {
-    setDataToLocalStorage({ followersAmount, isFollow });
-  }, [followersAmount, isFollow]);
-
+  const [followersAmount, setFollowersAmount] = useState(followers ?? 0);
   const countedFollowersAmount = new Intl.NumberFormat('en-US').format(
     followersAmount
-    );
-    const btnText = isFollow ? 'Following' : 'Follow';
-    const handleClick = () => {
-      if (isFollow) {
-        setFollowersAmount(followersAmount - 1);
-        setIsFollow(false);
-        return;
-      }
-      setFollowersAmount(followersAmount + 1);
-      setIsFollow(true);
-    };
+  );
+  const btnText = isFollow ? 'Following' : 'Follow';
+  const handleClick = () => {
+    if (isFollow) {
+      const newAmount = followersAmount - 1;
+      setFollowersAmount(newAmount);
+      changeFollowersAmount(newAmount, id, false);
+      setIsFollow(false);
+      return;
+    }
+    const newAmount = followersAmount + 1;
+    setFollowersAmount(newAmount);
+    changeFollowersAmount(newAmount, id, true);
+    setIsFollow(true);
+  };
+  
     
+  const imgSrc = `https://cdn-icons-png.flaticon.com/512/${avatar}`;
+
   return (
-    <Layout>
+    <Container>
       <LogoBox>
         <Logo />
       </LogoBox>
       <BgImg src={bgImg} alt="avatar" />
-      <Avatar src={cardImg} alt="avatar" />
+      <AvatarBox>
+        <Ellipse />
+        <Avatar src={imgSrc} alt={user} />
+      </AvatarBox>
       <Line />
-      <TweetsText>777 tweets</TweetsText>
+      <Name>{user}</Name>
+      <TweetsText>{tweets} tweets</TweetsText>
       <FollowersText>{countedFollowersAmount} Followers</FollowersText>
       <Button type="button" onClick={handleClick} isFollow={isFollow}>
         {btnText}
       </Button>
-    </Layout>
+    </Container>
   );
 };

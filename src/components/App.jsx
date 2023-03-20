@@ -1,4 +1,4 @@
-import { Card } from "./Card/Card";
+import { CardList } from "./CardsList/CardsList";
 
 export const App = () => {
   return (
@@ -7,12 +7,11 @@ export const App = () => {
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center',
         fontSize: 30,
         color: '#010101'
       }}
     >
-      <Card />
+      <CardList />
     </div>
   );
 };

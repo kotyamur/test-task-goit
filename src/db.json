@@ -1,0 +1,42 @@
+[
+  {
+    "avatar": "1998/1998592.png",
+    "user": "Elon Reeve Musk",
+    "tweets": 777,
+    "followers": 100600,
+    "id": 1,
+    "following": false
+  },
+  {
+    "avatar": "616/616438.png",
+    "user": "Johannes Kepler",
+    "tweets": 555,
+    "followers": 100700,
+    "id": 2,
+    "following": false
+  },
+  {
+    "avatar": "1623/1623681.png",
+    "user": "Michael Faraday",
+    "tweets": 666,
+    "followers": 100800,
+    "id": 3,
+    "following": false
+  },
+  {
+    "avatar": "2977/2977285.png",
+    "user": "Claude Bernard",
+    "tweets": 999,
+    "followers": 100900,
+    "id": 4,
+    "following": false
+  },
+  {
+    "avatar": "1998/1998749.png",
+    "user": "Werner Heisenberg",
+    "tweets": 222,
+    "followers": 100400,
+    "id": 5,
+    "following": false
+  }
+]
